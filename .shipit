@@ -1,0 +1,3 @@
+steps = FindVersion, ChangeVersion, CheckYAMLChangeLog, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean
+
+svk.tagpattern = //local/hanekomu-cpan/tags/Text-Pipe-%v

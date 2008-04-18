@@ -1,0 +1,20 @@
+---
+global:
+  name: Text-Pipe
+releases:
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - Fixed newlines in pod
+      - added pipe() method to Text::Pipe for easier construction
+      - added Text::Pipe::Split
+    date: 2007-11-12T12:35:58Z
+    tags:
+      - DOCFIX
+      - NEWFEATURE
+    version: 0.02
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - original version
+    date: 2007-11-10T20:44:05Z
+    tags: []
+    version: 0.01
