@@ -1,0 +1,7 @@
+steps = ApplyYAMLChangeLogVersion, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
+
+svk.tagpattern = //local/hanekomu-cpan/tags/Text-Pipe-%v
+
+twitter.config = ~/.twitterrc
+twitter.distname = Text-Pipe
+twitter.message = shipped %d %v - soon at %u
