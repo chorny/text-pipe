@@ -1,0 +1,34 @@
+---
+global:
+  name: Text-Pipe
+releases:
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - 'added Append, Chomp, Chop, LowercaseFirst, Prepend, Print and Say segments, and tests'
+    date: 2007-11-15T15:35:46Z
+    tags:
+      - NEWFEATURE
+    version: 0.04
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - Text::Pipe::Base uses Class::Accessor::Constructor's mk_constructor for new() and defines an empty init()
+    date: 2007-11-14T21:50:26Z
+    tags:
+      - NEWFEATURE
+    version: 0.03
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - Fixed newlines in pod
+      - added pipe() method to Text::Pipe for easier construction
+      - added Text::Pipe::Split
+    date: 2007-11-12T12:35:58Z
+    tags:
+      - DOCFIX
+      - NEWFEATURE
+    version: 0.02
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
+      - original version
+    date: 2007-11-10T20:44:05Z
+    tags: []
+    version: 0.01
