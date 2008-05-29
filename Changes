@@ -6,7 +6,8 @@ releases:
     changes:
       - set the version to 0.07
       - moved generated documentation of interited methods to after documentation of this class' methods so the manpage is more readable
-    date: 2008-01-31T16:02:05Z
+      - '.shipit: fixed svk.tagpattern'
+    date: 2008-05-29T12:08:37Z
     tags: []
     version: 0.07
   - author: 'Marcel Gruenauer <marcel@cpan.org>'

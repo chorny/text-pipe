@@ -1,6 +1,6 @@
 steps = ApplyYAMLChangeLogVersion, Manifest, DistTest, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
 
-svk.tagpattern = //local/cpan/tags/Text-Pipe-%v
+svk.tagpattern = //local/coderepos/Text-Pipe/tags/Text-Pipe-%v
 
 twitter.config = ~/.twitterrc
 twitter.distname = Text-Pipe
