@@ -6,7 +6,7 @@ use Text::Pipe;
 use Test::More;
 
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 
 use base 'Exporter';
