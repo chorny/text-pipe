@@ -11,16 +11,12 @@ requires 'List::Util';
 requires 'Sub::Name';
 requires 'UNIVERSAL::require';
 
-build_requires 'Test::More' => '0.70';
+recommends 'Test::Pod';
+recommends 'Test::Pod::Coverage';
 
-process_templates(
-    first_year => 2007,
-    rest_from  => "$ENV{HOME}/.mitlib/standard_pod",
-    start_tag  => '{%',
-    end_tag    => '%}',
-);
+test_requires 'Test::More' => '0.70';
+test_requires 'Test::Compile';
 
-use_standard_tests(without => 'pod_coverage');
 auto_install;
 auto_include;
 WriteAll;
