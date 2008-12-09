@@ -102,15 +102,28 @@ component is initialized by calling the method of the same name with the given
 value. If called with a single hash reference, it is dereferenced and its
 key/value pairs are set as described before.
 
-=item filter_single
+=item bit_or
 
-Filters a single string. In this base class this method just returns the input
-string unaltered.
+This subroutine implements the pipe stacking that is invoked by using the C<|>
+operator, as in:
+
+    my $stackable_pipe = $pipe1 | $pipe2 | $pipe3;
 
 =item filter
 
 Can filter a single string or an reference to an array of strings. Each string
 is filtered using C<filter_single()>.
+
+=item filter_single
+
+Filters a single string. In this base class this method just returns the input
+string unaltered.
+
+=item init
+
+This method is called by the constructor and passed the object so it can be
+initialized. In this class the method is empty, but it exists so that
+subclasses can override this method and call C<SUPER::init()>.
 
 =back
 

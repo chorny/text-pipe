@@ -45,7 +45,13 @@ Text::Pipe::Append - Common text filter API
 
     $obj->clear_text;
 
-Clears the value.
+Clears the text string that would be appended.
+
+=item filter_single
+
+Implements the actual segment filter that acts upon a single string. If a text
+value is set, it appends that value to the string that comes into the pipe
+segment. If no text is set, this segment is a no-op.
 
 =item text
 
@@ -53,13 +59,12 @@ Clears the value.
     $obj->text($value);
 
 A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+text that is appended. If called with a single argument, it sets the text to
+be appended.
 
 =item text_clear
 
-    $obj->text_clear;
-
-Clears the value.
+Synonym for C<clear_text()>.
 
 =back
 

@@ -61,8 +61,6 @@ sub PIPE {
 
 __END__
 
-
-
 =head1 NAME
 
 Text::Pipe - Common text filter API
@@ -114,7 +112,25 @@ corresponding pipe.
 
 =over 4
 
+=item new
 
+    my $pipe = Text::Pipe->new('List::First', code => { $_ < 7 });
+
+Constructs a new pipe. The first argument is the pipe segment type - in the
+example above a C<Text::Pipe::List::First> would be constructed. The remaining
+arguments are passed to that segment's constructor.
+
+=item def_pipe
+
+    Text::Pipe->def_pipe('Foobar', sub { lc $_[1] });
+    my $pipe_lowercase = Text::Pipe->new('Foobar');
+    is($pipe_lowercase->filter('A TEST'), 'a test', 'lowercase pipe');
+
+This method provides a lightweight way to define a new pipe segment class. The
+first argument is the segment type - in the example above, a new segment class
+C<Text::Pipe::Foobar> would be defined. The second argument is a coderef that
+acts as the segment's filter. The segment class will subclass
+C<Text::Pipe::Base>.
 
 =back
 
@@ -145,7 +161,6 @@ Copyright 2007-2008 by the authors.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
 
 =cut
 

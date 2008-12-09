@@ -42,7 +42,6 @@ sub deep_count {
 __END__
 
 
-
 =head1 NAME
 
 Text::Pipe::Multiplex - Common text filter API

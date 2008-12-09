@@ -37,7 +37,10 @@ Text::Pipe::Lowercase - Common text filter API
 
 =over 4
 
+=item filter_single
 
+Implements the actual segment filter that acts upon a single string. It simply
+takes an input string, lowercases it and returns it.
 
 =back
 

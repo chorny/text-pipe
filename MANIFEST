@@ -11,7 +11,6 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
-inc/Test/Compile.pm
 inc/Test/More.pm
 lib/Text/Pipe.pm
 lib/Text/Pipe/Append.pm
@@ -63,4 +62,5 @@ xt/author/00_compile.t
 xt/author/01_perl_critic.t
 xt/author/02_pod.t
 xt/author/03_podspell.t
+xt/author/04_pod_coverage.t
 xt/author/perlcriticrc

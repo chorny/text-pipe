@@ -38,7 +38,10 @@ Text::Pipe::Chomp - Common text filter API
 
 =over 4
 
+=item filter_single
 
+Implements the actual segment filter that acts upon a single string. It simply
+takes an input string, chomps it and returns it.
 
 =back
 

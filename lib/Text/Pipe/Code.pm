@@ -41,6 +41,9 @@ Text::Pipe::Code - Filter text through a code ref
 
 =head1 DESCRIPTION
 
+This pipe segment filters its input by sending it to a coderef and returning
+whatever the coderef returns.
+
 =head1 METHODS
 
 =over 4
@@ -49,7 +52,7 @@ Text::Pipe::Code - Filter text through a code ref
 
     $obj->clear_code;
 
-Clears the value.
+Clears the coderef value.
 
 =item code
 
@@ -57,13 +60,11 @@ Clears the value.
     $obj->code($value);
 
 A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+coderef. If called with a single argument, it sets the coderef.
 
 =item code_clear
 
-    $obj->code_clear;
-
-Clears the value.
+Synonym for C<clear_code()>.
 
 =item filter
 
