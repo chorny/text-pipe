@@ -17,3 +17,7 @@ Grünauer
 unshifts
 ref
 behaviour
+segment's
+op
+init
+chomps
