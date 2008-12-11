@@ -52,6 +52,9 @@ Text::Pipe::Multiplex - Common text filter API
 
 =head1 DESCRIPTION
 
+Represents a multiplexing pipe segment so input gets sent to all pipes
+attached to the multiplexer.
+
 =head1 METHODS
 
 =over 4
@@ -60,13 +63,24 @@ Text::Pipe::Multiplex - Common text filter API
 
     $obj->clear_pipes;
 
-Deletes all elements from the array.
+Deletes all pipes that are attached to the multiplexer.
 
 =item count_pipes
 
     my $count = $obj->count_pipes;
 
-Returns the number of elements in the array.
+Counts the number of pipes attached to the multiplexer.
+
+=item deep_count
+
+Returns the total number of pipe segments that are attached to this segment,
+computed recursively. So if the multiplexer has three pipes attached, each of
+which consist of four pipes, this method will return 12.
+
+=item filter
+
+Takes input and sends it to each attached pipe. The results are returned in an
+array reference.
 
 =item index_pipes
 
@@ -74,8 +88,8 @@ Returns the number of elements in the array.
     my @elements  = $obj->index_pipes(@indices);
     my $array_ref = $obj->index_pipes(@indices);
 
-Takes a list of indices and returns the elements indicated by those indices.
-If only one index is given, the corresponding array element is returned. If
+Takes a list of indices and returns the attached pipes indicated by those
+indices. If only one index is given, the corresponding pipe is returned. If
 several indices are given, the result is returned as an array in list context
 or as an array reference in scalar context.
 
@@ -86,59 +100,48 @@ or as an array reference in scalar context.
     $obj->pipes(@values);
     $obj->pipes($array_ref);
 
-Get or set the array values. If called without an arguments, it returns the
-array in list context, or a reference to the array in scalar context. If
-called with arguments, it expands array references found therein and sets the
-values.
+Get or set the attached pipes array. If called without an arguments, it
+returns the array in list context, or a reference to the array in scalar
+context. If called with arguments, it expands array references found therein
+and sets the values.
 
 =item pipes_clear
 
-    $obj->pipes_clear;
-
-Deletes all elements from the array.
+Synonym for C<clear_pipes()>.
 
 =item pipes_count
 
-    my $count = $obj->pipes_count;
-
-Returns the number of elements in the array.
+Synonym for C<count_pipes()>.
 
 =item pipes_index
 
-    my $element   = $obj->pipes_index(3);
-    my @elements  = $obj->pipes_index(@indices);
-    my $array_ref = $obj->pipes_index(@indices);
-
-Takes a list of indices and returns the elements indicated by those indices.
-If only one index is given, the corresponding array element is returned. If
-several indices are given, the result is returned as an array in list context
-or as an array reference in scalar context.
+Synonym for C<index_pipes()>.
 
 =item pipes_pop
 
     my $value = $obj->pipes_pop;
 
-Pops the last element off the array, returning it.
+Pops the last attached pipe off the array, returning it.
 
 =item pipes_push
 
     $obj->pipes_push(@values);
 
-Pushes elements onto the end of the array.
+Pushes a pipe  onto the end of the array of attached pipes.
 
 =item pipes_set
 
-    $obj->pipes_set(1 => $x, 5 => $y);
+    $obj->pipes_set(1 => $segment_1, 5 => $segment_2);
 
-Takes a list of index/value pairs and for each pair it sets the array element
-at the indicated index to the indicated value. Returns the number of elements
-that have been set.
+Takes a list of index/value pairs and for each pair it sets the pipe element
+at the indicated index to the indicated pipe value. Returns the number of
+elements that have been set.
 
 =item pipes_shift
 
     my $value = $obj->pipes_shift;
 
-Shifts the first element off the array, returning it.
+Shifts the first attached pipe off the array of attached pipes, returning it.
 
 =item pipes_splice
 
@@ -148,23 +151,23 @@ Shifts the first element off the array, returning it.
 
 Takes three arguments: An offset, a length and a list.
 
-Removes the elements designated by the offset and the length from the array,
-and replaces them with the elements of the list, if any. In list context,
-returns the elements removed from the array. In scalar context, returns the
-last element removed, or C<undef> if no elements are removed. The array grows
-or shrinks as necessary. If the offset is negative then it starts that far
-from the end of the array. If the length is omitted, removes everything from
-the offset onward. If the length is negative, removes the elements from the
-offset onward except for -length elements at the end of the array. If both the
-offset and the length are omitted, removes everything. If the offset is past
-the end of the array, it issues a warning, and splices at the end of the
-array.
+Removes the pipes designated by the offset and the length from the array,
+and replaces them with the pipe elements of the list, if any. In list context,
+returns the elements removed from the array. In scalar context, returns
+the last element removed, or C<undef> if no elements are removed. The
+array grows or shrinks as necessary. If the offset is negative then it
+starts that far from the end of the array. If the length is omitted,
+removes everything from the offset onward. If the length is negative,
+removes the elements from the offset onward except for -length elements at
+the end of the array. If both the offset and the length are omitted,
+removes everything. If the offset is past the end of the array, it issues
+a warning, and splices at the end of the array.
 
 =item pipes_unshift
 
     $obj->pipes_unshift(@values);
 
-Unshifts elements onto the beginning of the array.
+Unshifts pipes onto the beginning of the array of attached pipes.
 
 =item pop_pipes
 
@@ -174,49 +177,23 @@ Pops the last element off the array, returning it.
 
 =item push_pipes
 
-    $obj->push_pipes(@values);
-
-Pushes elements onto the end of the array.
+Synonym for C<pipes_push()>.
 
 =item set_pipes
 
-    $obj->set_pipes(1 => $x, 5 => $y);
-
-Takes a list of index/value pairs and for each pair it sets the array element
-at the indicated index to the indicated value. Returns the number of elements
-that have been set.
+Synonym for C<pipes_set()>.
 
 =item shift_pipes
 
-    my $value = $obj->shift_pipes;
-
-Shifts the first element off the array, returning it.
+Synonym for C<pipes_shift()>.
 
 =item splice_pipes
 
-    $obj->splice_pipes(2, 1, $x, $y);
-    $obj->splice_pipes(-1);
-    $obj->splice_pipes(0, -1);
-
-Takes three arguments: An offset, a length and a list.
-
-Removes the elements designated by the offset and the length from the array,
-and replaces them with the elements of the list, if any. In list context,
-returns the elements removed from the array. In scalar context, returns the
-last element removed, or C<undef> if no elements are removed. The array grows
-or shrinks as necessary. If the offset is negative then it starts that far
-from the end of the array. If the length is omitted, removes everything from
-the offset onward. If the length is negative, removes the elements from the
-offset onward except for -length elements at the end of the array. If both the
-offset and the length are omitted, removes everything. If the offset is past
-the end of the array, it issues a warning, and splices at the end of the
-array.
+Synonym for C<pipes_splice()>.
 
 =item unshift_pipes
 
-    $obj->unshift_pipes(@values);
-
-Unshifts elements onto the beginning of the array.
+Synonym for C<pipes_unshift()>.
 
 =back
 
@@ -293,8 +270,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

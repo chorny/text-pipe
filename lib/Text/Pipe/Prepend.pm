@@ -45,7 +45,13 @@ Text::Pipe::Prepend - Common text filter API
 
     $obj->clear_text;
 
-Clears the value.
+Clears the text string that would be prepended.
+
+=item filter_single
+
+Implements the actual segment filter that acts upon a single string. If a text
+value is set, it prepends that value to the string that comes into the pipe
+segment. If no text is set, this segment is a no-op.
 
 =item text
 
@@ -53,13 +59,12 @@ Clears the value.
     $obj->text($value);
 
 A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+text that is prepended. If called with a single argument, it sets the text to
+be prepended.
 
 =item text_clear
 
-    $obj->text_clear;
-
-Clears the value.
+Synonym for C<clear_text()>.
 
 =back
 
@@ -136,8 +141,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

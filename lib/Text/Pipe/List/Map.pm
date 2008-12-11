@@ -47,21 +47,27 @@ Text::Pipe::List::Map - Common text filter API
 
     $obj->clear_code;
 
-Clears the value.
+Clears the coderef.
 
 =item code
 
     my $value = $obj->code;
     $obj->code($value);
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+A basic getter/setter method for the coderef. If called without an argument,
+it returns the value. If called with a single argument, it sets the value.
 
 =item code_clear
 
-    $obj->code_clear;
+Synonym for C<clear_code()>.
 
-Clears the value.
+=item filter
+
+If the input is an array reference, it passes each element to the code
+reference. The element will be in C<$_>. Returns an array reference in which
+all elements have been processed by the coderef.
+
+If the input is a single string, it just returns that string.
 
 =back
 
@@ -138,8 +144,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

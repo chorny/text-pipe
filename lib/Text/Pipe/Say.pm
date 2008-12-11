@@ -38,7 +38,11 @@ Text::Pipe::Say - Common text filter API
 
 =over 4
 
+=item filter_single
 
+Implements the actual segment filter that acts upon a single string. It simply
+takes an input string, prints it with a newline at the end, like Perl 6's
+C<say()>, and returns it.
 
 =back
 
@@ -115,8 +119,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

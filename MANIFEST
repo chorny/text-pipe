@@ -23,6 +23,7 @@ lib/Text/Pipe/List/Grep.pm
 lib/Text/Pipe/List/Map.pm
 lib/Text/Pipe/List/Max.pm
 lib/Text/Pipe/List/MaxStr.pm
+lib/Text/Pipe/List/Min.pm
 lib/Text/Pipe/List/MinStr.pm
 lib/Text/Pipe/List/Pop.pm
 lib/Text/Pipe/List/Reduce.pm

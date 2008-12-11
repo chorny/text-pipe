@@ -29,7 +29,7 @@ sub filter_single {
     my $times = $self->times;
     my $join  = $self->join;
 
-    for (1 .. $times) {
+    for (1..$times) {
         $output .= $input;
         $output .= $join unless $_ eq $times;
     }
@@ -50,9 +50,13 @@ Text::Pipe::Repeat - Common text filter API
 
 =head1 SYNOPSIS
 
-    Text::Pipe::Repeat->new;
+    Text::Pipe::Repeat->new(times => 2, join => "\n");
 
 =head1 DESCRIPTION
+
+This is a pipe segment that takes input, repeats it a given number of times
+(default: 2) and join the repeated strings with a given value (default: empty
+string).
 
 =head1 METHODS
 
@@ -62,41 +66,45 @@ Text::Pipe::Repeat - Common text filter API
 
     $obj->clear_join;
 
-Clears the value.
+Clears the value that indicates how the repeated input should be joined.
 
 =item clear_times
 
     $obj->clear_times;
 
-Clears the value.
+Clears the value that indicates how many times the input should be repeated.
+
+=item filter_single
+
+Implements the actual segment filter that acts upon a single string. It takes
+an input string, repeats it a number of times indicated by C<times()> and
+joins the repeated strings with the value of C<join()>, then returns it.
 
 =item join
 
     my $value = $obj->join;
     $obj->join($value);
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+A basic getter/setter method. The value indicates how the repeated input
+should be joined. If called without an argument, it returns the value. If
+called with a single argument, it sets the value.
 
 =item join_clear
 
-    $obj->join_clear;
-
-Clears the value.
+Synonym for C<clear_join()>.
 
 =item times
 
     my $value = $obj->times;
     $obj->times($value);
 
-A basic getter/setter method. If called without an argument, it returns the
-value. If called with a single argument, it sets the value.
+A basic getter/setter method. The value indicates how many times the input
+should be repeated. If called without an argument, it returns the value. If
+called with a single argument, it sets the value.
 
 =item times_clear
 
-    $obj->times_clear;
-
-Clears the value.
+Synonym for C<clear_times()>.
 
 =back
 
@@ -173,8 +181,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

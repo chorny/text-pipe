@@ -41,15 +41,31 @@ Text::Pipe::Tester - Common text filter API
 
 =head1 SYNOPSIS
 
-    Text::Pipe::Tester->new;
+    use Text::Pipe::Tester;
+    pipe_ok('List::Grep', [ code => sub { $_ % 2 } ],
+        [ 1 .. 10 ], [ 1, 3, 5, 7, 9 ]);
 
 =head1 DESCRIPTION
 
-=head1 METHODS
+This is not a pipe segment; rather it exports a function that helps in testing
+pipes.
+
+=head1 FUNCTIONS
 
 =over 4
 
+=item pipe_ok
 
+    pipe_ok($type, $options, $input, $expect, $name);
+
+    pipe_ok('List::Grep', [ code => sub { $_ % 2 } ],
+        [ 1 .. 10 ], [ 1, 3, 5, 7, 9 ]);
+
+Constructs a pipe segment of type C<$type> using options C<$options>. It then
+sends the C<$input> through the pipe and checks that the pipe returns
+C<$output>; the check is done with C<is_deeply()> for array references. For
+the test name, C<$name> is used if given, or C<$type> if no name has been
+specified.
 
 =back
 
@@ -74,8 +90,12 @@ See perlmodinstall for information and options on installing Perl modules.
 =head1 AVAILABILITY
 
 The latest version of this module is available from the Comprehensive Perl
-Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+The development version lives at L<http://github.com/hanekomu/text-pipe/>.
+Instead of sending patches, please fork this project using the standard git
+and github infrastructure.
 
 =head1 AUTHORS
 

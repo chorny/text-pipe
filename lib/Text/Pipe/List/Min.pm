@@ -1,7 +1,8 @@
-package Text::Pipe::Append;
+package Text::Pipe::List::Min;
 
 use warnings;
 use strict;
+use List::Util 'min';
 
 
 our $VERSION = '0.08';
@@ -10,13 +11,11 @@ our $VERSION = '0.08';
 use base 'Text::Pipe::Base';
 
 
-__PACKAGE__->mk_scalar_accessors(qw(text));
-
-
-sub filter_single {
+sub filter {
     my ($self, $input) = @_;
-    return $input unless defined $self->text;
-    $input . $self->text;
+    return $input unless ref $input eq 'ARRAY';
+
+    min @$input;
 }
 
 
@@ -29,56 +28,31 @@ __END__
 
 =head1 NAME
 
-Text::Pipe::Append - Pipe segment that appends text to input
+Text::Pipe::List::Min - Common text filter API
 
 =head1 SYNOPSIS
 
-    use Text::Pipe;
-    my $pipe = Text::Pipe->new('Append', text => 'bar');
-    my $output = $pipe->filter('foo');
-    # $output is 'foobar'
+    Text::Pipe::List::Min->new;
 
 =head1 DESCRIPTION
-
-This pipe segment is configured with a string which is then appended to all
-input that is filtered through the pipe.
 
 =head1 METHODS
 
 =over 4
 
-=item clear_text
+=item filter
 
-    $obj->clear_text;
-
-Clears the text string that would be appended.
-
-=item filter_single
-
-Implements the actual segment filter that acts upon a single string. If a text
-value is set, it appends that value to the string that comes into the pipe
-segment. If no text is set, this segment is a no-op.
-
-=item text
-
-    my $value = $obj->text;
-    $obj->text($value);
-
-A basic getter/setter method. If called without an argument, it returns the
-text that is appended. If called with a single argument, it sets the text to
-be appended.
-
-=item text_clear
-
-Synonym for C<clear_text()>.
+If the input is an array reference, it returns the entry in the array with the
+lowest numerical value. If the input is a single string, it just returns that
+string.
 
 =back
 
-Text::Pipe::Append inherits from L<Text::Pipe::Base>.
+Text::Pipe::List::Min inherits from L<Text::Pipe::Base>.
 
 The superclass L<Text::Pipe::Base> defines these methods and functions:
 
-    new(), bit_or(), filter(), init()
+    new(), bit_or(), filter_single(), init()
 
 The superclass L<Class::Accessor::Complex> defines these methods and
 functions:
