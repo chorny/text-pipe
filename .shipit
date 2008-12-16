@@ -1,10 +1,6 @@
-steps = FindVersion, ChangeVersion, CheckChangeLog, Manifest, DistTestExtra, Commit, Tag, MakeDist, MyUploadCPAN, DistClean, Twitter
+steps = FindVersion, ChangeVersion, CheckChangeLog, Manifest, DistTestExtra, Commit, Tag, MakeDist, MyUploadCPAN, Twitter, DistClean
 
-git.tagpattern = Text-Pipe-%v
+git.tagpattern = v%v
 git.push_to    = origin
-
-# svn.tagpattern = http://svn.coderepos.org/share/lang/perl/Text-Pipe/tags/Text-Pipe-%v
-
 twitter.config = ~/.twitterrc
-twitter.distname = Text-Pipe
-twitter.message = shipped %d %v - soon at %u
+
