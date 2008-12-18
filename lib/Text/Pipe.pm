@@ -70,6 +70,14 @@ Text::Pipe - Common text filter API
     my $pipe = Text::Pipe->new('List::First', code => { $_ < 7 });
     my $result = $pipe->filter(...);
 
+or
+
+    use Web::Scraper;
+    my $scraper = scraper {
+        process '//p/a',
+            'texts[]' => [ 'TEXT', PIPE('Trim'), PIPE('Uppercase') ];
+    };
+
 =head1 DESCRIPTION
 
 This class is a factory for text pipes. A pipe has a C<filter()> method
@@ -79,11 +87,14 @@ L<Text::Pipe::Stackable>.
 
 The problem that this distribution tries to solve is that there are several
 distributions on CPAN which use text filtering in some way or other, for
-example the Template Toolkit. But each distribution is somewhat different, and
-they have to reimplement the same text filters over and over again. 
+example the Template Toolkit or Web::Scraper. But each distribution is
+somewhat different, and they have to reimplement the same text filters over
+and over again.
 
 This distribution aims at offering a common text filter API. So if you want to
-use text pipes with Template Toolkit, you just need to write an adapter.
+use text pipes with Template Toolkit, you just need to write an adapter. With
+Web::Scraper, you can even use text pipes directly Using the C<PIPE()>
+function, as shown in the synopsis.
 
 Text pipe segments live in the C<Text::Pipe::> namespace. So if you implement
 a C<Text::Pipe::Foo::Bar> pipe segment, you can instantiate it with
