@@ -38,7 +38,7 @@ Text::Pipe::Say - Common text filter API
 
 =over 4
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. It simply
 takes an input string, prints it with a newline at the end, like Perl 6's

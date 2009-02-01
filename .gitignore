@@ -12,4 +12,5 @@ BUILD.SKIP
 COVER.SKIP
 CPAN.SKIP
 META.yml
+.DS_Store
 *.swp

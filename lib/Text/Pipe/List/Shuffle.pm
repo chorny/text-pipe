@@ -40,7 +40,7 @@ Text::Pipe::List::Shuffle - Common text filter API
 
 =over 4
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it shuffles the elements and returns the
 shuffled array reference. If the input is a single string, it just returns

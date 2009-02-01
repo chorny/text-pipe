@@ -38,7 +38,7 @@ Text::Pipe::Print - Common text filter API
 
 =over 4
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. It simply
 prints the input string and returns it so it can be used in further pipe

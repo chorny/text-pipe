@@ -40,7 +40,7 @@ Text::Pipe::List::MaxStr - Common text filter API
 
 =over 4
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it returns the entry in the array with the
 highest string value, as defined by the C<gt> string comparison operator. If

@@ -37,7 +37,7 @@ Text::Pipe::Reverse - Common text filter API
 
 =over 4
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. It simply
 takes an input string, reverses it (in scalar context) and returns it.

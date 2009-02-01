@@ -54,7 +54,7 @@ pipes.
 
 =over 4
 
-=item pipe_ok
+=item C<pipe_ok>
 
     pipe_ok($type, $options, $input, $expect, $name);
 

@@ -40,7 +40,7 @@ Text::Pipe::List::Sum - Common text filter API
 
 =over 4
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it returns the sum of all the elements in
 the list. If the input is a single string, it just returns that string.

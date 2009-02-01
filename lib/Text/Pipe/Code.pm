@@ -48,13 +48,13 @@ whatever the coderef returns.
 
 =over 4
 
-=item clear_code
+=item C<clear_code>
 
     $obj->clear_code;
 
 Clears the coderef value.
 
-=item code
+=item C<code>
 
     my $value = $obj->code;
     $obj->code($value);
@@ -62,11 +62,11 @@ Clears the coderef value.
 A basic getter/setter method. If called without an argument, it returns the
 coderef. If called with a single argument, it sets the coderef.
 
-=item code_clear
+=item C<code_clear>
 
 Synonym for C<clear_code()>.
 
-=item filter
+=item C<filter>
 
 Passes the input to the code reference and returns the result. No distinction
 is made between single strings and references to array of strings.

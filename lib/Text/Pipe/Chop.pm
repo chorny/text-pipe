@@ -43,7 +43,7 @@ This pipe segment chops all input that is filtered through it.
 
 =over 4
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. It simply
 takes an input string, chops it and returns it.

@@ -47,19 +47,19 @@ input that is filtered through the pipe.
 
 =over 4
 
-=item clear_text
+=item C<clear_text>
 
     $obj->clear_text;
 
 Clears the text string that would be appended.
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. If a text
 value is set, it appends that value to the string that comes into the pipe
 segment. If no text is set, this segment is a no-op.
 
-=item text
+=item C<text>
 
     my $value = $obj->text;
     $obj->text($value);
@@ -68,7 +68,7 @@ A basic getter/setter method. If called without an argument, it returns the
 text that is appended. If called with a single argument, it sets the text to
 be appended.
 
-=item text_clear
+=item C<text_clear>
 
 Synonym for C<clear_text()>.
 

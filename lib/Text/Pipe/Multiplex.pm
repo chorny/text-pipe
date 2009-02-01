@@ -59,30 +59,30 @@ attached to the multiplexer.
 
 =over 4
 
-=item clear_pipes
+=item C<clear_pipes>
 
     $obj->clear_pipes;
 
 Deletes all pipes that are attached to the multiplexer.
 
-=item count_pipes
+=item C<count_pipes>
 
     my $count = $obj->count_pipes;
 
 Counts the number of pipes attached to the multiplexer.
 
-=item deep_count
+=item C<deep_count>
 
 Returns the total number of pipe segments that are attached to this segment,
 computed recursively. So if the multiplexer has three pipes attached, each of
 which consist of four pipes, this method will return 12.
 
-=item filter
+=item C<filter>
 
 Takes input and sends it to each attached pipe. The results are returned in an
 array reference.
 
-=item index_pipes
+=item C<index_pipes>
 
     my $element   = $obj->index_pipes(3);
     my @elements  = $obj->index_pipes(@indices);
@@ -93,7 +93,7 @@ indices. If only one index is given, the corresponding pipe is returned. If
 several indices are given, the result is returned as an array in list context
 or as an array reference in scalar context.
 
-=item pipes
+=item C<pipes>
 
     my @values    = $obj->pipes;
     my $array_ref = $obj->pipes;
@@ -105,31 +105,31 @@ returns the array in list context, or a reference to the array in scalar
 context. If called with arguments, it expands array references found therein
 and sets the values.
 
-=item pipes_clear
+=item C<pipes_clear>
 
 Synonym for C<clear_pipes()>.
 
-=item pipes_count
+=item C<pipes_count>
 
 Synonym for C<count_pipes()>.
 
-=item pipes_index
+=item C<pipes_index>
 
 Synonym for C<index_pipes()>.
 
-=item pipes_pop
+=item C<pipes_pop>
 
     my $value = $obj->pipes_pop;
 
 Pops the last attached pipe off the array, returning it.
 
-=item pipes_push
+=item C<pipes_push>
 
     $obj->pipes_push(@values);
 
 Pushes a pipe  onto the end of the array of attached pipes.
 
-=item pipes_set
+=item C<pipes_set>
 
     $obj->pipes_set(1 => $segment_1, 5 => $segment_2);
 
@@ -137,13 +137,13 @@ Takes a list of index/value pairs and for each pair it sets the pipe element
 at the indicated index to the indicated pipe value. Returns the number of
 elements that have been set.
 
-=item pipes_shift
+=item C<pipes_shift>
 
     my $value = $obj->pipes_shift;
 
 Shifts the first attached pipe off the array of attached pipes, returning it.
 
-=item pipes_splice
+=item C<pipes_splice>
 
     $obj->pipes_splice(2, 1, $x, $y);
     $obj->pipes_splice(-1);
@@ -163,35 +163,35 @@ the end of the array. If both the offset and the length are omitted,
 removes everything. If the offset is past the end of the array, it issues
 a warning, and splices at the end of the array.
 
-=item pipes_unshift
+=item C<pipes_unshift>
 
     $obj->pipes_unshift(@values);
 
 Unshifts pipes onto the beginning of the array of attached pipes.
 
-=item pop_pipes
+=item C<pop_pipes>
 
     my $value = $obj->pop_pipes;
 
 Pops the last element off the array, returning it.
 
-=item push_pipes
+=item C<push_pipes>
 
 Synonym for C<pipes_push()>.
 
-=item set_pipes
+=item C<set_pipes>
 
 Synonym for C<pipes_set()>.
 
-=item shift_pipes
+=item C<shift_pipes>
 
 Synonym for C<pipes_shift()>.
 
-=item splice_pipes
+=item C<splice_pipes>
 
 Synonym for C<pipes_splice()>.
 
-=item unshift_pipes
+=item C<unshift_pipes>
 
 Synonym for C<pipes_unshift()>.
 

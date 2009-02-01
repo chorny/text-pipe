@@ -39,7 +39,7 @@ Text::Pipe::List::Size - Common text filter API
 
 =over 4
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it returns the number of elements in that
 list If the input is a single string, it just returns that string.

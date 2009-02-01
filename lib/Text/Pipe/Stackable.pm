@@ -94,40 +94,40 @@ the order they were stacked.
 
 =over 4
 
-=item clear_pipes
+=item C<clear_pipes>
 
     $obj->clear_pipes;
 
 Deletes all stacked pipes.
 
-=item clear
+=item C<clear>
 
 Synonym for C<clear_pipes()>.
 
-=item count_pipes
+=item C<count_pipes>
 
     my $count = $obj->count_pipes;
 
 Returns the number of stacked pipes, not recursing into possibly further
 stacked or multiplexed segments.
 
-=item count
+=item C<count>
 
 Synonym for C<count_pipes()>.
 
-=item deep_count
+=item C<deep_count>
 
 Returns the total number of pipe segments that are stacked in this container,
 computed recursively. So if the container has three stacked pipes attached,
 each of which consist of four pipes, this method will return 12.
 
-=item filter
+=item C<filter>
 
 Takes input and sends it to all stacked pipes in turn. That is, one stacked
 pipe's output becomes the next stacked pipe's input. Returns the output of the
 last stacked pipe.
 
-=item index_pipes
+=item C<index_pipes>
 
     my $element   = $obj->index_pipes(3);
     my @elements  = $obj->index_pipes(@indices);
@@ -138,7 +138,7 @@ indices.  If only one index is given, the corresponding array element is
 returned. If several indices are given, the result is returned as an array in
 list context or as an array reference in scalar context.
 
-=item new
+=item C<new>
 
     my $stacked_pipe = Text::Pipe::Stackable->new(
         $pipe_trim, $pipe_uc, $pipe_repeat
@@ -146,7 +146,7 @@ list context or as an array reference in scalar context.
 
 Takes a list of pipes and stacks them, returning the container segment.
 
-=item pipes
+=item C<pipes>
 
     my @values    = $obj->pipes;
     my $array_ref = $obj->pipes;
@@ -158,31 +158,31 @@ returns the array in list context, or a reference to the array in scalar
 context. If called with arguments, it expands array references found therein
 and sets the values.
 
-=item pipes_clear
+=item C<pipes_clear>
 
 Synonym for C<clear_pipes()>.
 
-=item pipes_count
+=item C<pipes_count>
 
 Synonym for C<count_pipes()>.
 
-=item pipes_index
+=item C<pipes_index>
 
 Synonym for C<index_pipes()>.
 
-=item pipes_pop
+=item C<pipes_pop>
 
     my $value = $obj->pipes_pop;
 
 Pops the last stacked pipe off the array, returning it.
 
-=item pipes_push
+=item C<pipes_push>
 
     $obj->pipes_push(@values);
 
 Pushes a pipe onto the end of the array of stacked pipes.
 
-=item pipes_set
+=item C<pipes_set>
 
     $obj->pipes_set(1 => $pipe_a, 5 => $pipe_b);
 
@@ -190,13 +190,13 @@ Takes a list of index/value pairs and for each pair it sets the pipe at the
 indicated index to the indicated value. Returns the number of pipes that have
 been set.
 
-=item pipes_shift
+=item C<pipes_shift>
 
     my $value = $obj->pipes_shift;
 
 Shifts the first stacked pipe off the array, returning it.
 
-=item pipes_splice
+=item C<pipes_splice>
 
     $obj->pipes_splice(2, 1, $pipe_a, $pipe_b);
     $obj->pipes_splice(-1);
@@ -216,53 +216,53 @@ both the offset and the length are omitted, removes everything. If the
 offset is past the end of the array, it issues a warning, and splices at
 the end of the array.
 
-=item pipes_unshift
+=item C<pipes_unshift>
 
     $obj->pipes_unshift(@values);
 
 Unshifts pipes onto the beginning of the array of stacked pipes.
 
-=item pop
+=item C<pop>
 
 Synonym for C<pipes_pop()>.
 
-=item pop_pipes
+=item C<pop_pipes>
 
 Synonym for C<pipes_pop()>.
 
-=item push
+=item C<push>
 
 Synonym for C<pipes_push()>.
 
-=item push_pipes
+=item C<push_pipes>
 
 Synonym for C<pipes_push()>.
 
-=item set_pipes
+=item C<set_pipes>
 
 Synonym for C<pipes_set()>.
 
-=item shift
+=item C<shift>
 
 Synonym for C<pipes_shift()>.
 
-=item shift_pipes
+=item C<shift_pipes>
 
 Synonym for C<pipes_shift()>.
 
-=item splice
+=item C<splice>
 
 Synonym for C<pipes_splice()>.
 
-=item splice_pipes
+=item C<splice_pipes>
 
 Synonym for C<pipes_splice()>.
 
-=item unshift
+=item C<unshift>
 
 Synonym for C<pipes_unshift()>.
 
-=item unshift_pipes
+=item C<unshift_pipes>
 
 Synonym for C<pipes_unshift()>.
 

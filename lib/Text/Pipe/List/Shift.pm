@@ -39,7 +39,7 @@ Text::Pipe::List::Shift - Common text filter API
 
 =over 4
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it shifts the first element from the array
 and returns it. If the input is a single string, it just returns that string.

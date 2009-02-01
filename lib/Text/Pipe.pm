@@ -108,7 +108,7 @@ class documentations.
 
 =over 4
 
-=item PIPE
+=item C<PIPE>
 
     my $pipe = PIPE('Reverse', times => 2, join => ' = ');
     my $pipe = PIPE('UppercaseFirst');
@@ -123,7 +123,7 @@ corresponding pipe.
 
 =over 4
 
-=item new
+=item C<new>
 
     my $pipe = Text::Pipe->new('List::First', code => { $_ < 7 });
 
@@ -131,7 +131,7 @@ Constructs a new pipe. The first argument is the pipe segment type - in the
 example above a C<Text::Pipe::List::First> would be constructed. The remaining
 arguments are passed to that segment's constructor.
 
-=item def_pipe
+=item C<def_pipe>
 
     Text::Pipe->def_pipe('Foobar', sub { lc $_[1] });
     my $pipe_lowercase = Text::Pipe->new('Foobar');

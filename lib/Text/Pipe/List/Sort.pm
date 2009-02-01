@@ -43,13 +43,13 @@ Text::Pipe::List::Sort - Common text filter API
 
 =over 4
 
-=item clear_code
+=item C<clear_code>
 
     $obj->clear_code;
 
 Clears the coderef.
 
-=item code
+=item C<code>
 
     my $value = $obj->code;
     $obj->code($value);
@@ -57,11 +57,11 @@ Clears the coderef.
 A basic getter/setter method for the coderef. If called without an argument,
 it returns the value. If called with a single argument, it sets the value.
 
-=item code_clear
+=item C<code_clear>
 
 Synonym for C<clear_code()>.
 
-=item filter
+=item C<filter>
 
 If the input is an array reference, it uses the coderef in the C<sort BLOCK
 LIST> semantic, returning the sorted array reference. If the input is a single

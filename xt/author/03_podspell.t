@@ -43,6 +43,8 @@ behaviour
 blogs
 callback
 chomps
+configurator
+configurators
 crosscutting
 distname
 github

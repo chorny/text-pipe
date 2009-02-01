@@ -62,25 +62,25 @@ string).
 
 =over 4
 
-=item clear_join
+=item C<clear_join>
 
     $obj->clear_join;
 
 Clears the value that indicates how the repeated input should be joined.
 
-=item clear_times
+=item C<clear_times>
 
     $obj->clear_times;
 
 Clears the value that indicates how many times the input should be repeated.
 
-=item filter_single
+=item C<filter_single>
 
 Implements the actual segment filter that acts upon a single string. It takes
 an input string, repeats it a number of times indicated by C<times()> and
 joins the repeated strings with the value of C<join()>, then returns it.
 
-=item join
+=item C<join>
 
     my $value = $obj->join;
     $obj->join($value);
@@ -89,11 +89,11 @@ A basic getter/setter method. The value indicates how the repeated input
 should be joined. If called without an argument, it returns the value. If
 called with a single argument, it sets the value.
 
-=item join_clear
+=item C<join_clear>
 
 Synonym for C<clear_join()>.
 
-=item times
+=item C<times>
 
     my $value = $obj->times;
     $obj->times($value);
@@ -102,7 +102,7 @@ A basic getter/setter method. The value indicates how many times the input
 should be repeated. If called without an argument, it returns the value. If
 called with a single argument, it sets the value.
 
-=item times_clear
+=item C<times_clear>
 
 Synonym for C<clear_times()>.
 
