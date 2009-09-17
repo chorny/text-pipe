@@ -5,7 +5,7 @@ use strict;
 use UNIVERSAL::require;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 use base qw(Class::Accessor::Complex Class::Accessor::Constructor);
@@ -73,9 +73,11 @@ Text::Pipe::Base - Base class for text pipe segments
 
     package Text::Pipe::My::Segment;
 
-    use base 'Text::Pipe::Base'
+    use base 'Text::Pipe::Base';
 
-    sub filter { ... }
+    sub filter {
+        # blah
+    }
 
 =head1 DESCRIPTION
 
@@ -215,6 +217,10 @@ Copyright 2007-2009 by the authors.
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
+=head1 SEE ALSO
+
+If you are looking for the Windows software 'TextPipe Pro', go to
+http://www.datamystic.com/ - this Perl module has nothing to do with it.
 
 =cut
 

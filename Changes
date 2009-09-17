@@ -1,5 +1,8 @@
 Revision history for Perl extension Text-Pipe
 
+0.09 Thu Sep 17 18:36:56 MSZ 2009 (Marcel Gruenauer <marcel@cpan.org>)
+    - added link to TextPipe Pro to disambiguate
+
 0.08  Thu Jul 25 15:27:43 CEST 2008 (Marcel Gruenauer <marcel@cpan.org>)
      - Changed dist style and Changes back to standard. People didn't like it -
        the nail that sticks out gets hammered down.

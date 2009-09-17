@@ -8,7 +8,7 @@ use Sub::Name;
 use UNIVERSAL::require;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 use base 'Exporter';
@@ -69,9 +69,9 @@ Text::Pipe - Common text filter API
 =head1 SYNOPSIS
 
     my $pipe = Text::Pipe->new('List::First', code => { $_ < 7 });
-    my $result = $pipe->filter(...);
+    my $result = $pipe->filter('foo');
 
-or
+    # or
 
     use Web::Scraper;
     my $scraper = scraper {
@@ -177,6 +177,11 @@ Copyright 2007-2009 by the authors.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
+=head1 SEE ALSO
+
+If you are looking for the Windows software 'TextPipe Pro', go to
+http://www.datamystic.com/ - this Perl module has nothing to do with it.
 
 =cut
 

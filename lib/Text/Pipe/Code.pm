@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 
 use base 'Text::Pipe::Base';
@@ -34,10 +34,10 @@ Text::Pipe::Code - Filter text through a code ref
 
     my $pipe = Text::Pipe->new('Code', code => sub {
         my $input = shift;
-        ...
+        # do something
     });
 
-    my $result = $pipe->filter(...);
+    my $result = $pipe->filter('foo');
 
 =head1 DESCRIPTION
 
@@ -164,6 +164,10 @@ Copyright 2007-2009 by the authors.
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
+=head1 SEE ALSO
+
+If you are looking for the Windows software 'TextPipe Pro', go to
+http://www.datamystic.com/ - this Perl module has nothing to do with it.
 
 =cut
 
