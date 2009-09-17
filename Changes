@@ -7,7 +7,7 @@ Revision history for Perl extension Text-Pipe
 
 0.07  Thu, 29 May 2008 12:08:37 -0000 (Marcel Gruenauer <marcel@cpan.org>)
      - set the version to 0.07
-     - moved generated documentation of interited methods to after
+     - moved generated documentation of inherited methods to after
        documentation of this class' methods so the manpage is more readable
      - .shipit: fixed svk.tagpattern
 
