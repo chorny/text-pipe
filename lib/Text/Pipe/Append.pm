@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 
 use base 'Text::Pipe::Base';
@@ -164,11 +164,6 @@ Copyright 2007-2009 by the authors.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
-=head1 SEE ALSO
-
-If you are looking for the Windows software 'TextPipe Pro', go to
-http://www.datamystic.com/ - this Perl module has nothing to do with it.
 
 =cut
 

@@ -1,5 +1,8 @@
 Revision history for Perl extension Text-Pipe
 
+0.10 Fri Sep 18 13:07:44 MSZ 2009 (Marcel Gruenauer <marcel@cpan.org>)
+    - removed link to TextPipe Pro by request of the TextPipe Pro author
+
 0.09 Thu Sep 17 18:36:56 MSZ 2009 (Marcel Gruenauer <marcel@cpan.org>)
     - added link to TextPipe Pro to disambiguate
 
