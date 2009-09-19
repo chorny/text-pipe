@@ -1,8 +1,8 @@
 package Text::Pipe;
 
+use 5.006;
 use strict;
 use warnings;
-use 5.006;
 use Text::Pipe::Base;   # for def_pipe()
 use Sub::Name;
 use UNIVERSAL::require;
