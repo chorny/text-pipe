@@ -94,7 +94,7 @@ and over again.
 
 This distribution aims at offering a common text filter API. So if you want to
 use text pipes with Template Toolkit, you just need to write an adapter. With
-Web::Scraper, you can even use text pipes directly Using the C<PIPE()>
+Web::Scraper, you can even use text pipes directly using the C<PIPE()>
 function, as shown in the synopsis.
 
 Text pipe segments live in the C<Text::Pipe::> namespace. So if you implement
