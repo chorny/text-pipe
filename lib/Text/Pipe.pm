@@ -161,7 +161,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit L<http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see L<http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Text-Pipe/>.
 
 The development version lives at L<http://github.com/hanekomu/text-pipe/>.
 Instead of sending patches, please fork this project using the standard git
